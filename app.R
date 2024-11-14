@@ -21,11 +21,11 @@ ui <- fluidPage(
   h4("Use this app to explore steam games."),
   sidebarLayout(
     sidebarPanel(
-      sliderInput("priceInput", "Price", 0, 1000, c(0, 80), pre = "$"),
-      checkboxGroupInput("genreInput", "Genre", choices = c("All", genre_names), selected = NULL)
+      sliderInput("priceInput", "Price", 0, 1000, c(0, 80), pre = "$"), #Feature 1: Including a slider will allow users to filter the dataset to only include games that are within their specified price range. 
+      checkboxGroupInput("genreInput", "Genre", choices = c("All", genre_names), selected = NULL) #Feature 2: Having the option to check which genre the user is interested in will help further filter the many options to only show relevant results.
     ),
     mainPanel(
-      DTOutput("steamTable")
+      DTOutput("steamTable") #Feature 3: An interactive table will enable many additional useful capabilities such as searching for specific titles or sorting by lowest to highest price.
     )
   )
 )
