@@ -21,7 +21,7 @@ movies <- imdb1000_unfiltered %>%
     `USA Gross` = Gross
   ) %>%
   mutate(`USA Gross` = as.numeric(`USA Gross`))  
-
+getwd()
 # Checkbox inputs
 genre_names <- sort(unique(unlist(strsplit(imdb1000_unfiltered$Genre, ", "))))
 
@@ -29,6 +29,13 @@ genre_names <- sort(unique(unlist(strsplit(imdb1000_unfiltered$Genre, ", "))))
 ui <- fluidPage(
   titlePanel("IMDB Top 1000 Movies"),
   h4("Use this app to explore IMDB's 1000 top-rated movies."),
+  h6("Features to explore:", br(),
+     "1. Slider: to filter by year released.", br(),
+     "2. Checkboxes: to filter by genre", br(),
+     "3. Interactive table: for searching keywords or sorting by ascending/descending value for any column.", br(),
+     "4. Text output: provides updates on how many movies match the current filtering criteria", br(),
+     "5. Image output: click on a title to see the movie cover!", br(),
+     "6. Download button: download the full, unfiltered dataset"),
   
   sidebarLayout(
     sidebarPanel(
